@@ -1,0 +1,145 @@
+/* developers.css */
+.developers-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: var(--text-color);
+}
+
+.developers-section h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.developers-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(46, 211, 183, 0.1);
+}
+
+.feature-card h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cta-section {
+    text-align: center;
+    background-color: rgba(46, 211, 183, 0.1);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #26a08f;
+}
+
+@media (max-width: 768px) {
+    .developers-section {
+        padding: 3rem 1rem;
+    }
+
+    .developers-section h1 {
+        font-size: 2rem;
+    }
+
+    .feature-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animation for page transition */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animations for feature cards */
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.feature-card {
+    animation: slideInFromBottom 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Animation for CTA section */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cta-section {
+    animation: fadeInScale 0.5s ease-out 0.5s forwards;
+    opacity: 0;
+}
